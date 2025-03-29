@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Harsh Singh</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Background Video Styling */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Keeps it behind other content */
+}
+
+/* Ensure text is readable over video */
+body {
+    color: white;
+    font-family: Arial, sans-serif;
+    background: none; /* Remove background image */
+}
+
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: cyan;
+            color: black;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin: 0 15px;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1.2rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: cyan;
+        }
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .about-section {
+    max-width: 600px;
+    text-align: left;
+    font-size: 1rem; /* Keep font readable */
+    line-height: 1.5;
+    margin: 40px auto; /* Center below hero */
+    background: rgba(0, 0, 0, 0.6); /* Slight background for contrast */
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+#about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 300px; /* Ensure section is visible */
+    margin-top: 50px; /* Space from hero section */
+}
+
+.about-section {
+    max-width: 600px;
+    font-size: 1rem;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.6); /* Dark background for visibility */
+    padding: 15px;
+    border-radius: 8px;
+    color: white;
+    overflow: hidden; /* Prevent unwanted scroll */
+}
+
+
+.photo-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-bottom: 20px; /* Space below image */
+}
+
+.photo-container img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    opacity: 0; /* Default hidden */
+    transition: opacity 1.5s ease-in-out; /* Smooth fade-in */
+}
+
+
+        .hero-text {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+
+        /* CERTIFICATE FADE-IN EFFECT */
+        .certificates-container {
+            width: 60%;
+            margin: auto;
+            position: relative;
+            text-align: center;
+        }
+        .certificates-slider img {
+            width: 90%;
+            max-width: 500px;
+            height: auto;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+        .certificates-slider img.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+    </style>
+</head>
+<body>
+    <video autoplay loop muted playsinline id="bg-video">
+        <source src="output5.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <div class="logo-icon">HS</div>
+                Harsh Singh
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certificates">Certificates</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="hero">
+        <div class="hero-container">
+            <div class="photo-container">
+                <img src="Screenshot 2025-03-23 192621.png" alt="Harsh in Red" id="photo1">
+                <img src="Screenshot 2025-03-23 192703.png" alt="Harsh in Yellow" id="photo2">
+            </div>
+            <h1 class="hero-text">Hello, I am Harsh</h1>
+        </div>
+    </section>
+    
+    <!-- ABOUT SECTION BELOW HERO -->
+    <section id="about">
+        <div class="about-section">
+            <p id="about-text"></p> <!-- Typing animation text appears here -->
+        </div>
+    </section>
+    
+    
+    
+
+    <section id="projects" class="projects">
+        <h2 style="text-align: center;">My Projects</h2>
+        <div class="project-container" style="text-align: center;">
+            <h3>Gaming Tournament Website</h3>
+            <video width="80%" controls>
+                <source src="output.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </section>
+    
+    <!-- CERTIFICATE FADE-IN SECTION -->
+    <section id="certificates" class="certificates">
+        <h2 style="text-align: center;">Certificates & Badges</h2>
+        <div class="certificates-container">
+            <div class="certificates-slider">
+                <img src="certificate_1.png" alt="Certificate 1">
+                <img src="certificate_2.png" alt="Certificate 2">
+                <img src="certificate_3.png" alt="Certificate 3">
+                <img src="certificate_4.png" alt="Certificate 4">
+                <img src="certificate_5.png" alt="Certificate 5">
+                <img src="certificate_6.png" alt="Certificate 6">
+                <img src="certificate_7.png" alt="Certificate 7">
+                <img src="certificate_8.png" alt="Certificate 8">
+                <img src="certificate_9.png" alt="Certificate 9">
+                <img src="certificate_10.png" alt="Certificate 10">
+                <img src="c11.png" alt="Certificate 11">
+                <img src="c12.png" alt="Certificate 12">
+                <img src="c13.png" alt="Certificate 13">
+                <img src="c15.png" alt="Certificate 14">
+                <img src="Screenshot 2025-03-23 200248.png" alt="Certificate 15">
+                <img src="iiitd.png" alt="Certificate 16">
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let photos = [document.getElementById('photo1'), document.getElementById('photo2')];
+        let index = 0;
+
+        function changePhoto() {
+            photos.forEach(photo => photo.style.opacity = "0");
+            photos[index].style.opacity = "1";
+            index = (index + 1) % photos.length;
+            setTimeout(changePhoto, 3000);
+        }
+
+        setTimeout(() => {
+            photos[0].style.opacity = "1";
+            setTimeout(changePhoto, 3000);
+        }, 1000);
+
+        // CERTIFICATE FADE-IN EFFECT ON SCROLL
+        function fadeInCertificates() {
+            let certificates = document.querySelectorAll(".certificates-slider img");
+            let windowHeight = window.innerHeight;
+            
+            certificates.forEach((cert) => {
+                let certPosition = cert.getBoundingClientRect().top;
+                
+                if (certPosition < windowHeight - 100) {
+                    cert.classList.add("show");
+                }
+            });
+        }
+
+        window.addEventListener("scroll", fadeInCertificates);
+    </script>
+    <script>
+   document.addEventListener("DOMContentLoaded", function () {
+    // Typing animation for About Section
+    const aboutText = "I'm Harsh Singh, a passionate BSc Computer Science student at Delhi University (Rajdhani College, South Campus), with expertise in full-stack development and software engineering.\n\n"
+        + "✅ Full-Stack Development (Spring Boot, Java, Javascript,Html,Css)\n"
+        + "✅ Data Structures & Algorithms (Java)\n"
+        + "✅ Cybersecurity & Networking (Cisco Certified)\n"
+        
+        + "🚀 Let's connect and build something amazing together!";
+
+    let i = 0;
+    function typeWriter() {
+        if (i < aboutText.length) {
+            let char = aboutText.charAt(i);
+            if (char === '\n') {
+                document.getElementById("about-text").innerHTML += "<br>";
+            } else {
+                document.getElementById("about-text").innerHTML += char;
+            }
+            i++;
+            setTimeout(typeWriter, 40);
+        }
+    }
+
+    setTimeout(typeWriter, 1500); // Delay for better effect
+});
+</script>
+    
+
+    
+
+</body>
+</html>
